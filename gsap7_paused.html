@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        overflow: hidden;
+      }
+      .rect {
+        position: absolute;
+        left: 10%;
+        top: 10%;
+        height: 100px;
+        width: 100px;
+        background-color: rgb(36, 4, 4);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rect"></div>
+    <button class="btn">Animacja</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script>
+      const rect = document.querySelector(".rect");
+      const btn = document.querySelector(".btn");
+      const tl = gsap.timeline({ repeat: -1 });
+      tl.to(rect, { duration: 1, x: 200 });
+      tl.to(rect, { duration: 1, y: 200 });
+      tl.add("half");
+      tl.to(rect, { duration: 1, x: 0 });
+      tl.to(rect, { duration: 1, y: 0 });
+      tl.to(rect, { duration: 1, backgroundColor: "red" }, "half");
+
+      btn.addEventListener("click", () => tl.paused(!tl.paused()));
+    </script>
+  </body>
+</html>

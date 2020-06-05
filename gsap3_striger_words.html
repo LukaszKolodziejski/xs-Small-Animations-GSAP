@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      div {
+        flex-grow: 1;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 60px;
+        text-align: center;
+        opacity: 1;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="el">NOT</div>
+    <div class="el">ONLY</div>
+    <div class="el">MOMENTS</div>
+    <div class="el">ARE</div>
+    <div class="el">IMPORTANT</div>
+    <div class="el">IN</div>
+    <div class="el">LIFE</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script>
+      gsap.set(".el", { visibility: "visible" });
+      gsap.from(".el", {
+        x: 130,
+        opacity: 0,
+        stagger: 0.1,
+        delay: 1,
+        duration: 1,
+      });
+    </script>
+  </body>
+</html>

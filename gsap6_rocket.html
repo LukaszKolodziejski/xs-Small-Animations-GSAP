@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        overflow: hidden;
+      }
+      .rocket {
+        position: absolute;
+        left: 50%;
+        bottom: 100px;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <img class="rocket" src="rocket.svg" alt="" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script>
+      const tl = gsap.timeline({ repeat: -1 });
+      tl.timeScale(3);
+      tl.set(".rocket", { rotation: 90 });
+      tl.to(".rocket", { rotation: "-=90", duration: 2 });
+      tl.to(".rocket", {
+        ease: "power4.in",
+        y: "-=400",
+        duration: 2
+      });
+      tl.to(".rocket", { ease: "power0.in", y: "-=100", duration: 1 });
+      tl.add("stop");
+      tl.to(".rocket", { rotation: "-=120", duration: 0.7 }, "stop");
+      tl.to(".rocket", { y: 80, duration: 1 }, "stop");
+      tl.to(".rocket", { opacity: 0, duration: 0.3 });
+    </script>
+  </body>
+</html>
