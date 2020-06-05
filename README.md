@@ -1,4 +1,4 @@
-> # xs-Small-Animations-GSAP
+> # xs-Small-6-Animations-GSAP
 >> ## Project Action
 
 [![Demo CountPages alpha](https://github.com/LukaszKolodziejski/xs-Small-Animations-GSAP/blob/master/GIF/videoGIF1.gif)](https://github.com/LukaszKolodziejski/xs-Small-Animations-GSAP)
